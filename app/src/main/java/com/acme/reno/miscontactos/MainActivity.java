@@ -61,11 +61,20 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void onClick(View view) {
+        agregarContacto(txtNombre.getText().toString(), txtTelefono.getText().toString());
         String msg = String.format("%s ha sido agregado a la lista",txtNombre.getText());
         Toast.makeText(this,msg,Toast.LENGTH_LONG).show();
         btnAgregar.setEnabled(false);
+        inicializarListView();
         limpiarCampos();
 
+    }
+
+    private void inicializarListView() {
+    }
+
+    private void agregarContacto(String s, String s1) {
+        contactos.add(new Contacto(s,s1,"",""));
     }
 
     private void limpiarCampos() {
